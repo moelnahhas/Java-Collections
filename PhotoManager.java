@@ -53,16 +53,7 @@ public class PhotoManager {
 
         for(Photo photo : photos){
             Set<String> phototags = photo.getTags();
-            boolean flag = false;
-            for(String item : tags){
-                if(phototags.contains(item)){
-                    flag = true;
-                }else{
-                    flag = false;
-                    break;
-                }
-            };
-            if(flag){
+            if(phototags.containsAll(tags)){
                 outList.add(photo);
             }
         }
